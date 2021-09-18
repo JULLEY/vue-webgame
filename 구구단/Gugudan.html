@@ -9,20 +9,25 @@
 </head>
 <body>
     <div id="root">
-        <div>좋아요 눌렀음</div>
-        <button v-on:click="onClickButton">Like</button>
+        <div>{{first}}곱하기 {{second}}는?</div>
+        <form>
+            <input type="number" v-model="value">
+            <button id="result">입력</button>
+            <div>{{value}}</div>
+        </form>
     </div>
 </body>
 <script>
     const app = new Vue({
         el: '#root',
         data: {
-            liked: false,
+            first: Math.ceil(Math.random() * 9),
+            second: Math.ceil(Math.random() * 9),
+            value: '',
+            result: '',
         },
         methods: {
-            onClickButton(){
-                this.liked = true;
-            },
+
         },
     });
 </script>
